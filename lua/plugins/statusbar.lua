@@ -9,7 +9,7 @@ return {
             { "<leader>bs", "<cmd>BufferLinePick<CR>", desc = "select buffer" },
             -- pick a buffer to closes from the buffer list
             {
-                "<leader>bc",
+                "<leader>bC",
                 "<cmd>BufferLinePickClose<CR>",
                 desc = "close selected buffer",
             },
