@@ -177,8 +177,8 @@ return {
                     null_ls.builtins.diagnostics.selene,
                     null_ls.builtins.formatting.stylua,
                     -- php
-                    null_ls.builtins.diagnostics.phpstan,
-                    null_ls.builtins.formatting.phpcsfixer,
+                    -- null_ls.builtins.diagnostics.phpstan,
+                    -- null_ls.builtins.formatting.phpcsfixer,
                     -- shell
                     null_ls.builtins.diagnostics.zsh.with({
                         filetypes = { "zsh" },
@@ -187,18 +187,25 @@ return {
                         filetypes = { "zsh", "bash", "sh", "dosbatch", "ps1" },
                     }),
                     -- Docker
-                    null_ls.builtins.diagnostics.hadolint,
+                    -- null_ls.builtins.diagnostics.hadolint,
                     -- opengl
                     null_ls.builtins.diagnostics.glslc.with({
                         -- use opengl instead of vulkan1.0
                         extra_args = { "--target-env=opengl" },
                     }),
                     null_ls.builtins.diagnostics.staticcheck,
+                    null_ls.builtins.diagnostics.pylint.with({
+                        diagnostics_postprocess = function(diagnostic)
+                            diagnostic.code = diagnostic.message_id
+                        end,
+                    }),
+                    null_ls.builtins.formatting.isort,
+                    null_ls.builtins.formatting.black,
                 },
             }
         end,
     },
     {
         "kmarius/jsregexp",
-        },
+    },
 }
