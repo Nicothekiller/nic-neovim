@@ -32,7 +32,7 @@ return {
             servers = {
                 cssls = {},
                 html = {},
-                -- jsonls = {},
+                jsonls = {},
                 -- tailwindcss = {},
                 -- tsserver = {},
                 -- volar = {},
