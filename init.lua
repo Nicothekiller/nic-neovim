@@ -6,3 +6,6 @@ require("config")
 
 -- bootstrap lazy.nvim
 require("config.lazy")
+
+-- colorscheme
+vim.cmd([[colorscheme onedark]])
