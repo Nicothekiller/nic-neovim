@@ -375,8 +375,8 @@ return {
                 type = "server",
                 port = "${port}",
                 executable = {
-                    command = "dlv",
-                    args = { "dap", "-l", "127.0.0.1:${port}" },
+                    command = "/usr/bin/kitty",
+                    args = { "dlv","dap", "-l", "127.0.0.1:${port}" },
                 },
             }
 
