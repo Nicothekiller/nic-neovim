@@ -41,8 +41,8 @@ return {
         event = "VeryLazy",
         opts = {
             plugins = {
-                marks = true, -- shows a list of your marks on ' and `
-                registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+                marks = false, -- shows a list of your marks on ' and `
+                registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
                 -- the presets plugin, adds help for a bunch of default keybindings in Neovim
                 -- No actual key bindings are created
                 spelling = {
@@ -51,7 +51,7 @@ return {
                 },
                 presets = {
                     operators = true, -- adds help for operators like d, y, ...
-                    motions = true, -- adds help for motions
+                    motions = false, -- adds help for motions
                     text_objects = true, -- help for text objects triggered after entering an operator
                     windows = true, -- default bindings on <c-w>
                     nav = true, -- misc bindings to work with windows
@@ -66,31 +66,31 @@ return {
                 count = true,
             },
         },
-        config = function(_, opts)
-            local wk = require("which-key")
-            wk.setup(opts)
-            local keymaps = {
-                mode = { "n", "v" },
-                ["g"] = { name = "+goto" },
-                ["gz"] = { name = "+surround" },
-                ["]"] = { name = "+next" },
-                ["["] = { name = "+prev" },
-                ["<leader><tab>"] = { name = "+tabs" },
-                ["<leader>b"] = { name = "+buffer/BufferLine" },
-                ["<leader>d"] = { name = "+debugger" },
-                ["<leader>c"] = { name = "+code" },
-                ["<leader>f"] = { name = "+file/find" },
-                ["<leader>g"] = { name = "+git" },
-                ["<leader>gh"] = { name = "+hunks" },
-                ["<leader>q"] = { name = "+quit/session" },
-                ["<leader>s"] = { name = "+search" },
-                ["<leader>u"] = { name = "+ui/toggle" },
-                ["<leader>w"] = { name = "+windows" },
-                ["<leader>x"] = { name = "+diagnostics/quickfix" },
-                ["<leader>h"] = { name = "+gitsigns/hop" },
-                ["<localleader>u"] = { name = "+toggle" },
-            }
-            wk.register(keymaps)
+        config = function()
+            require("which-key").setup()
+            require("which-key").add({
+                {
+                    mode = { "n", "v" },
+                    { "<leader><tab>", group = "tabs" },
+                    { "<leader>b", group = "buffer/BufferLine" },
+                    { "<leader>c", group = "code" },
+                    { "<leader>d", group = "debugger" },
+                    { "<leader>f", group = "file/find" },
+                    { "<leader>g", group = "git" },
+                    { "<leader>gh", group = "hunks" },
+                    { "<leader>h", group = "gitsigns/hop" },
+                    { "<leader>q", group = "quit/session" },
+                    { "<leader>s", group = "search" },
+                    { "<leader>u", group = "ui/toggle" },
+                    { "<leader>w", group = "windows" },
+                    { "<leader>x", group = "diagnostics/quickfix" },
+                    { "<localleader>u", group = "toggle" },
+                    { "[", group = "prev" },
+                    { "]", group = "next" },
+                    { "g", group = "goto" },
+                    { "gz", group = "surround" },
+                },
+            })
         end,
     },
 }
