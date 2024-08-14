@@ -8,4 +8,4 @@ require("config")
 require("config.lazy")
 
 -- colorscheme
-vim.cmd([[colorscheme catppuccin-mocha]])
+vim.cmd([[colorscheme onedark]])
