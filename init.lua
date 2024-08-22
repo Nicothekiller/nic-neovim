@@ -236,10 +236,7 @@ vim.keymap.set({ "n", "t" }, "<M-t>", function()
 end, { desc = "vertical terminal" })
 
 -- keymap de :make con alt+m
-vim.keymap.set("n", "<M-m>", function()
-  vim.cmd("w")
-  vim.cmd("make")
-end, { desc = "run make" })
+vim.keymap.set("n", "<M-m>", ":w<cr>:make<cr>", { desc = "run make" })
 
 -- keymap de cambiar el CWD al archivo abierto
 vim.keymap.set(
