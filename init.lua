@@ -229,11 +229,12 @@ vim.keymap.set(
 )
 
 -- terminal vertical con alt+t y comentarios para horizontal
-vim.keymap.set({ "n", "t" }, "<M-t>", function()
-  -- vim.cmd.split({ "term://" .. vim.env.SHELL })
-  vim.cmd("vertical terminal")
-  -- vim.cmd.resize({ 15 })
-end, { desc = "vertical terminal" })
+vim.keymap.set(
+  { "n", "t" },
+  "<M-t>",
+  ":vertical terminal<cr>i",
+  { desc = "vertical terminal" }
+)
 
 -- keymap de :make con alt+m
 vim.keymap.set("n", "<M-m>", ":w<cr>:make<cr>", { desc = "run make" })
