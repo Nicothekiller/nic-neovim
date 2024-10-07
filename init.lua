@@ -159,6 +159,12 @@ vim.keymap.set(
   { desc = "switch to cwd" }
 )
 
+vim.keymap.set(
+  { "n", "v" },
+  "<C-s>",
+  ":wa<cr>",
+  { desc = "write all open buffers" }
+)
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
