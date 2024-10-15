@@ -1,9 +1,6 @@
 return {
-  -- NOTE: Yes, you can install new plugins here!
   "mfussenegger/nvim-dap",
-  -- NOTE: And you can specify dependencies as well
   dependencies = {
-    -- Creates a beautiful debugger UI
     "rcarriga/nvim-dap-ui",
 
     -- Required dependency for nvim-dap-ui
@@ -20,7 +17,7 @@ return {
     local dap = require("dap")
     local dapui = require("dapui")
     return {
-      -- Basic debugging keymaps, feel free to change to your liking!
+      -- Basic debugging keymaps
       { "<F5>", dap.continue, desc = "Debug: Start/Continue" },
       { "<F1>", dap.step_into, desc = "Debug: Step Into" },
       { "<F2>", dap.step_over, desc = "Debug: Step Over" },
@@ -33,7 +30,7 @@ return {
         end,
         desc = "Debug: Set Breakpoint",
       },
-      -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
+      -- Toggle to see last session result.
       { "<F7>", dapui.toggle, desc = "Debug: See last session result." },
       unpack(keys),
     }
@@ -51,10 +48,7 @@ return {
       -- see mason-nvim-dap README for more information
       handlers = {},
 
-      -- You'll need to check that you have the required things installed
-      -- online, please don't ask me how to install them :)
       ensure_installed = {
-        -- Update this to ensure that you have the debuggers for the langs you want
         "delve",
       },
     })
