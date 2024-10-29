@@ -1,0 +1,20 @@
+return {
+  {
+    "navarasu/onedark.nvim",
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+
+    init = function()
+      -- Load the colorscheme here.
+      vim.cmd.colorscheme("onedark")
+
+      -- You can configure highlights by doing something like:
+      vim.cmd.hi("Comment gui=none")
+    end, -- Highlight todo, notes, etc in comments
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "VimEnter",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = { signs = false },
+  },
+}

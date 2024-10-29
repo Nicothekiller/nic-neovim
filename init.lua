@@ -780,28 +780,6 @@ require("lazy").setup({
       })
     end,
   },
-
-  {
-    "navarasu/onedark.nvim",
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-
-    init = function()
-      -- Load the colorscheme here.
-      vim.cmd.colorscheme("onedark")
-
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi("Comment gui=none")
-    end,
-  },
-
-  -- Highlight todo, notes, etc in comments
-  {
-    "folke/todo-comments.nvim",
-    event = "VimEnter",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = { signs = false },
-  },
-
   { -- Collection of various small independent plugins/modules
     "echasnovski/mini.nvim",
     config = function()
@@ -897,10 +875,6 @@ require("lazy").setup({
   },
 })
 
+require("onedark").load()
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
--- setup de onedark
-require("onedark").setup({
-  style = "darker",
-})
-require("onedark").load()
