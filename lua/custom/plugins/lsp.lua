@@ -90,6 +90,14 @@ return {
           -- or a suggestion from your LSP for this to activate.
           map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
+          -- keymap with visual enabled, potentially useful for java
+          -- vim.keymap.set(
+          --   { "n", "v" },
+          --   "<leader>ca",
+          --   vim.lsp.buf.code_action,
+          --   { desc = "LSP: [C]ode [A]ction" }
+          -- )
+
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
