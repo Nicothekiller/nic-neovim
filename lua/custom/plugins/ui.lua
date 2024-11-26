@@ -5,8 +5,6 @@ return {
 
     init = function()
       require("onedark").load()
-      -- Load the colorscheme here.
-      vim.cmd.colorscheme("onedark")
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi("Comment gui=none")
