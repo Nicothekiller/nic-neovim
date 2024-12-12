@@ -258,6 +258,11 @@ return {
   {
     "mfussenegger/nvim-jdtls",
     ft = { "java" },
+
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+
     config = function()
       local config = {
         cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
@@ -265,6 +270,18 @@ return {
           vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]
         ),
       }
+
+      config["init_options"] = {
+        bundles = {
+          vim.fn.glob(
+            vim.fn.expand(
+              "~/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin-*.jar"
+            ),
+            1
+          ),
+        },
+      }
+
       require("jdtls").start_or_attach(config)
     end,
   },
