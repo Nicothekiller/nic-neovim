@@ -15,6 +15,8 @@ return {
 
       -- Allows extra capabilities provided by nvim-cmp
       "hrsh7th/cmp-nvim-lsp",
+      -- java
+      "nvim-java/nvim-java",
     },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -213,6 +215,8 @@ return {
       }
 
       require("mason").setup()
+      require("java").setup()
+      require("lspconfig").jdtls.setup({})
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
