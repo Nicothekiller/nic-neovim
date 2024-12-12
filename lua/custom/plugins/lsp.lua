@@ -16,7 +16,7 @@ return {
       -- Allows extra capabilities provided by nvim-cmp
       "hrsh7th/cmp-nvim-lsp",
       -- java
-      "nvim-java/nvim-java",
+      { "nvim-java/nvim-java", lazy = true },
     },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
