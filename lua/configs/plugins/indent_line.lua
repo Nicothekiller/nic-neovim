@@ -8,4 +8,7 @@ return {
       exclude = { filetypes = { "dashboard" } },
     },
   },
+  { -- Detect tabstop and shiftwidth automatically
+    "tpope/vim-sleuth",
+  },
 }
