@@ -20,6 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add plugins from forlder for better organization
-    { import = "configs.plugins" },
+    { import = "plugins" },
   },
 })
