@@ -32,6 +32,8 @@ return {
         return "%2l:%-2v"
       end
 
+      -- instead of autopairs, complete pairs automatically
+      -- for example write ( and autocomplete to ()
       require("mini.pairs").setup()
     end,
   },
