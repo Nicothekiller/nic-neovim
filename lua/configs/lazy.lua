@@ -22,4 +22,22 @@ require("lazy").setup({
     -- add plugins from forlder for better organization
     { import = "plugins" },
   },
+  -- colorscheme for installs
+  install = { colorscheme = { "onedark", "habamax" } },
+
+  performance = {
+    rtp = {
+      -- disable some rtp plugins
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
 })
