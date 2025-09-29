@@ -3,7 +3,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
     build = ":TSUpdate",
-    event = "VeryLazy",
     opts = function()
       local opts = {
         ensure_installed = {
