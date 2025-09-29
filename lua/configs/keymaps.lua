@@ -70,7 +70,7 @@ vim.keymap.set(
 )
 
 -- keymap de :make con alt+m
-vim.keymap.set("n", "<M-m>", ":make<cr>", { desc = "run make" })
+-- vim.keymap.set("n", "<M-m>", ":make<cr>", { desc = "run make" })
 
 -- keymap de cambiar el CWD al archivo abierto
 vim.keymap.set(

@@ -1,9 +1,19 @@
 -- lazy.nvim
 return {
   "folke/snacks.nvim",
+  lazy = false,
+  priority = 1000,
   opts = {
     picker = {},
     explorer = {},
+    bigfile = {},
+    image = {},
+    indent = {},
+    lazygit = {},
+    notifier = {},
+    notify = {},
+    statuscolumn = {},
+    dashboard = {},
   },
   keys = {
     -- Top Pickers & Explorer
@@ -368,6 +378,13 @@ return {
       "<leader>sS",
       function()
         Snacks.picker.lsp_workspace_symbols()
+      end,
+      desc = "LSP Workspace Symbols",
+    },
+    {
+      "<leader>gg",
+      function()
+        Snacks.lazygit()
       end,
       desc = "LSP Workspace Symbols",
     },
