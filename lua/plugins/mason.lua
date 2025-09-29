@@ -1,8 +1,8 @@
 return {
   {
     "mason-org/mason.nvim",
-    lazy = true,
     opts = {},
+    event = "VeryLazy",
   },
   {
     "mason-org/mason-lspconfig.nvim",
@@ -11,5 +11,6 @@ return {
       { "mason-org/mason.nvim", opts = {} },
       "neovim/nvim-lspconfig",
     },
+    event = "VeryLazy",
   },
 }
