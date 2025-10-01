@@ -35,6 +35,16 @@ return {
         bundles = {},
       },
     }
-    require("jdtls").start_or_attach(opts)
+
+    -- needed because java fucking sucks and jdtls doesn't fucking attach to new buffers
+    -- whenever it doesn't fucking feel like it
+    --
+    -- god i fucking hate java
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = { "java" },
+      callback = function()
+        require("jdtls").start_or_attach(opts)
+      end,
+    })
   end,
 }
