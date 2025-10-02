@@ -32,7 +32,10 @@ return {
       --
       -- If you don't plan on any eclipse.jdt.ls plugins you can remove this
       init_options = {
-        bundles = {},
+        bundles = {
+          -- config for the debugger
+          vim.fn.stdpath("data") .. "/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin-0.53.2.jar",
+        },
       },
     }
 
