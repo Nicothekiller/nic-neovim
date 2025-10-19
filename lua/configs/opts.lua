@@ -74,6 +74,6 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.diagnostic.config({
-  virtual_lines = {},
+  virtual_text = {},
 })
 vim.lsp.inlay_hint.enable(true)
