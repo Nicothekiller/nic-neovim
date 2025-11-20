@@ -394,6 +394,13 @@ return {
       desc = "LSP Workspace Symbols",
     },
     {
+      "<leader>st",
+      function()
+        Snacks.picker.todo_comments()
+      end,
+      desc = "TODO comments",
+    },
+    {
       "<leader>gg",
       function()
         Snacks.lazygit()
