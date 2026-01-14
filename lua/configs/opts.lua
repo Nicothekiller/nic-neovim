@@ -77,5 +77,6 @@ vim.diagnostic.config({
   virtual_text = {},
 })
 vim.lsp.inlay_hint.enable(true)
+vim.lsp.enable("dartls")
 
 vim.opt.linebreak = true
