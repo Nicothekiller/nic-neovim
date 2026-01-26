@@ -3,7 +3,7 @@ return {
     "saghen/blink.cmp",
     event = "VeryLazy",
     -- optional: provides snippets for the snippet source
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = { "L3MON4D3/LuaSnip", "rafamadriz/friendly-snippets", "zyllus17/flutter-snippets" },
 
     -- use a release tag to download pre-built binaries
     version = "1.*",
@@ -28,6 +28,10 @@ return {
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
       keymap = { preset = "super-tab" },
+
+      snippets = {
+        preset = "luasnip",
+      },
 
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -71,5 +75,19 @@ return {
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       },
     },
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    -- version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp",
+    init = function()
+      -- load snippets from path/of/your/nvim/config/my-cool-snippets
+      require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load({
+        paths = { vim.fn.stdpath("data") .. "/lazy/flutter-snippets" },
+      })
+    end,
   },
 }
